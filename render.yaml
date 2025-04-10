@@ -1,0 +1,26 @@
+# render.yaml
+databases:
+  - name: myapp-db        # Name for the PostgreSQL database
+    plan: free            # Use free tier database
+    region: oregon        # (Optional) choose closest region for database
+    databaseName: myapp   # Initial db name
+    user: myapp           # DB username
+
+services:
+  - type: web
+    name: myapp-web       # Name of the web service
+    runtime: python
+    region: oregon        # Same region as database for low latency
+    plan: free
+    env: docker           # use Docker environment (necessary for Python)
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn mysite.wsgi:application"
+    envVars:
+      - key: DATABASE_URL         # Render will fill this with the database's URL
+        fromDatabase:
+          name: myapp-db
+          property: connectionString
+      - key: SECRET_KEY           # Use the SECRET_KEY from Render's generated env vars
+        generateValue: true
+      - key: ALLOWED_HOSTS        # (Optional) you could set allowed hosts via env
+        value: myapp-web.onrender.com

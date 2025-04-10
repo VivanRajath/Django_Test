@@ -1,0 +1,151 @@
+/* styles.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #000000 !important;
+  border-bottom: 3px solid #e50914;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.navbar-dark .navbar-brand:hover {
+  color: #e50914 !important;
+}
+
+.main-content {
+  flex: 1;
+  border-radius: 90px;
+  padding-bottom: 60px; /* Footer height */
+}
+
+/* Form Styling */
+.auth-card {
+  background-color: rgba(0,0,0,0.85);
+  border-radius: 40px;
+  padding: 60px 68px;
+  max-width: 450px;
+  margin: 2rem auto;
+}
+.btn-netflix {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+.btn-netflix:hover {
+  background-color: #f40612;
+}
+
+.signup-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.mb-3, .mb-4 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.text-center {
+  margin-top: 15px;
+}
+
+.auth-card h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.form-control {
+  background: #333 !important;
+  border: none !important;
+  color: #fff !important;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px #e50914 !important;
+}
+
+.form-label {
+  color: #8c8c8c;
+  font-size: 0.9rem;
+}
+
+.btn-netflix {
+  background: #e50914;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.btn-netflix:hover {
+  background: #c40812;
+  color: white;
+}
+
+/* Signup specific */
+.signup-link {
+  color: #737373;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  color: #e50914;
+}
+
+/* Error messages */
+.alert-danger {
+  background: #e50914 !important;
+  border: none;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: #000000;
+  color: #737373;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-text {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MySite</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  {% load static %}
+  <link href="{% static 'style1s.css' %}" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+
+
+  <!-- Main content area -->
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-text">© 2025 MySite. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS (optional, for certain components) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
