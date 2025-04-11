@@ -1,34 +1,58 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
-<div class="main-content">
+<div class="form-container">
     <div class="auth-card">
-        <h2>Sign In</h2>
-        
+        <h2 class="text-center">Login</h2>
+
         {% if error %}
             <div class="alert alert-danger mb-4">{{ error }}</div>
         {% endif %}
 
         <form method="post">
-          {% csrf_token %}
-          <div class="mb-3">
-              <label class="form-label">Username or Email</label>
-              <input type="text" name="username" class="form-control" required>
-          </div>
-      
-          <div class="mb-4">
-              <label class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" required>
-          </div>
-      
-          <button type="submit" class="btn btn-primary w-100 py-2">Sign In</button>
-      
-          <div class="mt-4 text-center">
-              <span class="text-muted">New to MySite? </span>
-              <a href="{% url 'signup' %}" class="signup-link text-primary">Sign up now</a>
-          </div>
-      </form>
-      
+            {% csrf_token %}
+            
+            <div class="username">
+                <label class="form-label mb-2">Username or Email</label>
+                <input type="text" name="username" class="form-control" required>
+                {% for error in form.username.errors %}
+                    <div class="text-danger small mt-1">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="password-container">
+                    <input type="password" name="password" class="form-control" required>
+                    <i class="eye-icon" id="togglePassword" onclick="togglePassword('password')">&#128065;</i>
+                </div>
+                {% for error in form.password.errors %}
+                    <div class="text-danger small mt-1">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn-netflix w-100 mt-4">Sign In</button>
+
+            <div class="mt-4 text-center">
+                <span class="text-muted">New to MySite? </span>
+                <a href="{% url 'signup' %}" class="signup-link">Sign up now</a>
+            </div>
+        </form>
     </div>
 </div>
+
+<script>
+    function togglePassword(passwordId) {
+        var passwordField = document.getElementById(passwordId);
+        var type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+    }
+
+    // Ensure form is submitted (Test)
+    document.querySelector('form').addEventListener('submit', function(event) {
+        console.log("Form is being submitted");
+    });
+</script>
+
 {% endblock %}

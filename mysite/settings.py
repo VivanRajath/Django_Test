@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w*8-+0d+eg=d#+2aw-(+7(22(wfsx0em$o#5je_!4-&#=9q=#1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -124,6 +124,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]  # static folder in your project root
 # For production (when you run collectstatic), use STATIC_ROOT
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # folder for collected static files (for deployment)
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
