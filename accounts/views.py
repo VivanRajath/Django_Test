@@ -31,7 +31,7 @@ def login_view(request):
     return render(request, 'login.html')
 
 
-@login_required
+
 def home(request):
     """Home page (dashboard) - only accessible to logged-in users."""
     return render(request, 'home.html')
