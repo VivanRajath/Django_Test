@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Movie List{% endblock %}
+{% block content %}
+  <h1 class="mb-4">All Movies</h1>
+
+  <h1> Movies in progress </h1>
+
+  <!-- Movie Grid Container -->
+  {% comment %} <div class="movie-grid-container">
+    {% for movie in movies %}
+        <!-- Link to the movie detail page -->
+        <a href="{% url 'movie_detail' movie.id %}">
+          <div class="movie-card">
+            <img src="{{ movie.video_picture.url }}" class="card-img-top" alt="{{ movie.title }}">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.description|truncatewords:20 }}</p>
+            </div>
+          </div>
+        </a>
+    {% empty %}
+      <p>No movies available.</p>
+    {% endfor %}
+</div> {% endcomment %}
+{% endblock %}
+

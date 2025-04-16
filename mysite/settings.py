@@ -222,3 +222,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 LOGIN_URL = '/login/'                # URL to redirect to for @login_required
 LOGIN_REDIRECT_URL = '/'            # Where to go after login (home)
 LOGOUT_REDIRECT_URL = '/login/'    # Where to go after logout
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

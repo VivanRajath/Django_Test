@@ -161,3 +161,147 @@ button {
   cursor: pointer;
 }
 
+
+
+.movie-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px;
+  padding: 20px; 
+  margin-top: 20px;
+}
+
+
+.movie-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.movie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+.movie-card .card-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+}
+
+
+.movie-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.movie-card .card-text {
+  font-size: 14px;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 60px;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+  .movie-card {
+    width: 100%; 
+  }
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+}
+
+/* Video Player */
+.video-player {
+  width: 100%;
+  max-height: 500px;
+  background-color: black;
+}
+
+/* Video Controls Overlay */
+.video-controls {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8; /* Slight transparency */
+  background: rgba(0, 0, 0, 0.4); /* Black overlay */
+  padding: 10px;
+  visibility: visible;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+/* Timer Text */
+.timer {
+  font-size: 16px;
+  color: red; /* Red color for the timer text (like Netflix) */
+  margin-bottom: 15px;
+}
+
+/* Control Buttons */
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.control-buttons button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.control-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.control-buttons .btn-primary {
+  background-color: #ff0000; /* Red color for play/pause button */
+}
+
+.control-buttons .btn-warning {
+  background-color: #ffa500; /* Orange color for forward button */
+}
+
+.control-buttons .btn-secondary {
+  background-color: #808080; /* Grey color for lock button */
+}
+
+.control-buttons .btn-info {
+  background-color: #17a2b8; /* Blue color for language button */
+}
+
+/* Hidden controls when screen is locked */
+.video-controls.locked {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Back to List Button */
+.btn-outline-dark {
+  font-size: 16px;
+  margin-top: 20px;
+}
